@@ -1,0 +1,89 @@
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 605px;
+  height: 50px;
+  background: #aacdbe;
+  border-radius: 6px;
+  margin: 13px;
+  font-size: 20px;
+}
+
+.item p {
+  margin-left: 5px;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100px;
+
+}
+
+.input {
+  height: 30px;
+  width: 450px;
+  margin-left: 5px;
+  border: none;
+  border-radius: 6px;
+  outline: none;
+  font-size: 20px;
+}
+
+.button {
+  width: 70px;
+  height: 35px;
+  background: #e6ebff;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+
+.delete-button {
+  background: teal;
+  border: none;
+  border-radius: 6px;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  margin-right: 10px;
+  cursor: pointer;
+  outline: none;
+}
+
+.delete-button:after {
+  content: '';
+  height: 30px;
+  border-left: 2px solid #fff;
+  position: absolute;
+  transform: rotate(45deg);
+  top: 5px;
+  left: 19px;
+}
+
+.delete-button:before {
+  content: '';
+  height: 30px;
+  border-left: 2px solid #fff;
+  position: absolute;
+  transform: rotate(-45deg);
+  top: 5px;
+  left: 19px;
+}
+
+.edit-button {
+  width: 40px;
+  height: 40px;
+  color: white;
+  background: teal;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  outline: none;
+}
