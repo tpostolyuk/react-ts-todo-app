@@ -1,9 +1,10 @@
 import * as types from './types';
 import { actionTypes, inititalState } from './action-types';
 
-const initialState: inititalState = {
+export const initialState: inititalState = {
   todos: [
-    {id: '32v425v34gvb572', title: 'Buy a milk', isEditing: false}
+    {id: '32v425v34gvb572', title: 'Buy a milk', isEditing: false},
+    {id: '32c5345b3464536', title: 'Read a book', isEditing: false}
   ],
 };
 
