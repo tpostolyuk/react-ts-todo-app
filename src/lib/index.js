@@ -1,2 +1,2 @@
-export { store } from './store';
-export { useFetch } from './hooks';
+export { store } from './store'
+export { useFetch } from './hooks'

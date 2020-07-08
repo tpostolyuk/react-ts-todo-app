@@ -1,43 +1,44 @@
-import React, { useState, PropsWithChildren } from 'react';
-import s from './todo-item.module.css';
-import { useDispatch } from 'react-redux';
-import { Todo } from '../common/action-types';
-import { removeTodo, editTodo, finishEditingTodo } from '../common/actions';
+import React, { useState, PropsWithChildren } from 'react'
+import { useDispatch } from 'react-redux'
+import { Todo } from '../common/action-types'
+import { removeTodo, editTodo, finishEditingTodo } from '../common/actions'
+import s from './todo-item.module.css'
 
 export const TodoItem: React.FC<Todo> = (props: PropsWithChildren<Todo>) => {
-  const { id, title, isEditing } = props;
-  
-  let [updatedTodoValue, setUpdatedTodoValue] = useState<string>(title);
+  const { id, title, isEditing } = props
 
-  const dispatch = useDispatch();
+  const [updatedTodoValue, setUpdatedTodoValue] = useState<string>(title)
 
-  
+  const dispatch = useDispatch()
+
   const handleDelete = (): void => {
-    dispatch(removeTodo(id));
+    dispatch(removeTodo(id))
   }
-  
+
   const handleEdit = (): void => {
-    dispatch(editTodo(id));
+    dispatch(editTodo(id))
   }
   const handleFinishEditing = (): void => {
-    if(updatedTodoValue === '') {
-      alert('Enter new todo title');
+    if (updatedTodoValue === '') {
+      alert('Enter new todo title')
     } else {
-      dispatch(finishEditingTodo(id, updatedTodoValue));
+      dispatch(finishEditingTodo(id, updatedTodoValue))
     }
   }
 
-  if(isEditing) {
+  if (isEditing) {
     return (
       <div className={s.item}>
-        <input 
-          onChange={(e) => setUpdatedTodoValue(e.target.value)} 
+        <input
+          onChange={(e) => setUpdatedTodoValue(e.target.value)}
           className={s.input}
-          value={updatedTodoValue} 
-          type="text" 
+          value={updatedTodoValue}
+          type="text"
         />
         <div className={s.actions}>
-          <button className={s.button} onClick={handleFinishEditing}>Finish</button>
+          <button className={s.button} onClick={handleFinishEditing}>
+            Finish
+          </button>
         </div>
       </div>
     )
@@ -46,7 +47,9 @@ export const TodoItem: React.FC<Todo> = (props: PropsWithChildren<Todo>) => {
     <div className={s.item}>
       <p>{title}</p>
       <div className={s.actions}>
-        <button className={s['edit-button']} onClick={() => handleEdit()}>Edit</button>
+        <button className={s['edit-button']} onClick={() => handleEdit()}>
+          Edit
+        </button>
         <button className={s['delete-button']} onClick={handleDelete} />
       </div>
     </div>

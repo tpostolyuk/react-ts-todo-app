@@ -1,1 +1,1 @@
-export { TodoItem } from './todo-item';
+export { TodoItem } from './todo-item'

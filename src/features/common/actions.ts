@@ -1,32 +1,40 @@
-import * as  types  from './types';
-import { AddTodoAction, RemoveTodoAction, Todo,  } from './action-types';
+import * as types from './types'
+import {
+  AddTodoAction,
+  RemoveTodoAction,
+  EditTodoAction,
+  FinishEditingTodoAction,
+  Todo,
+} from './action-types'
 
 export const addTodo = (todo: Todo): AddTodoAction => {
   return {
     type: types.ADD_TODO,
     todo,
-  };
-};
+  }
+}
 
 export const removeTodo = (id: string): RemoveTodoAction => {
   return {
     type: types.REMOVE_TODO,
-    id
+    id,
   }
 }
 
-export const editTodo = (id: string) => {
+export const editTodo = (id: string): EditTodoAction => {
   return {
     type: types.EDIT_TODO,
-    id
+    id,
   }
 }
 
-
-export const finishEditingTodo = (id: string, updatedTodoText: string) => {
+export const finishEditingTodo = (
+  id: string,
+  updatedTodoText: string
+): FinishEditingTodoAction => {
   return {
-  type: types.FINISH_EDITING_TODO,
-  id,
-  updatedTodoText
+    type: types.FINISH_EDITING_TODO,
+    id,
+    updatedTodoText,
   }
 }

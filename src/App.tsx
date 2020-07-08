@@ -1,8 +1,8 @@
-import React from "react";
-import s from "./App.module.css";
-import { Provider } from 'react-redux';
-import { TodoContainer } from "./ui";
-import { store } from './lib/store';
+import React from 'react'
+import { Provider } from 'react-redux'
+import s from './App.module.css'
+import { TodoContainer } from './ui'
+import { store } from './lib/store'
 
 export const App: React.FC = () => {
   return (
@@ -12,5 +12,5 @@ export const App: React.FC = () => {
         <TodoContainer />
       </div>
     </Provider>
-  );
-};
+  )
+}

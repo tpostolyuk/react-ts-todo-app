@@ -1,1 +1,1 @@
-export { TodoBoard } from './todo-board';
+export { TodoBoard } from './todo-board'

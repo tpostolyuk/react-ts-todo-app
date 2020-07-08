@@ -1,40 +1,45 @@
-import * as types from './types';
-import { actionTypes, inititalState } from './action-types';
+import * as types from './types'
+import { ActionTypes, InititalState } from './action-types'
 
-export const initialState: inititalState = {
+export const initialState: InititalState = {
   todos: [
-    {id: '32v425v34gvb572', title: 'Buy a milk', isEditing: false},
-    {id: '32c5345b3464536', title: 'Read a book', isEditing: false}
+    { id: '32v425v34gvb572', title: 'Buy a milk', isEditing: false },
+    { id: '32c5345b3464536', title: 'Read a book', isEditing: false },
   ],
-};
+}
 
-export const todoReducer = (state: inititalState = initialState, action: actionTypes) => {
+export const todoReducer = (
+  state: InititalState = initialState,
+  action: ActionTypes
+) => {
   switch (action.type) {
     case types.ADD_TODO:
       return {
         ...state,
-        todos: [...state.todos, action.todo]
-      };
+        todos: [...state.todos, action.todo],
+      }
     case types.REMOVE_TODO:
       return {
         ...state,
-        todos: state.todos.filter(item => item.id !== action.id)
+        todos: state.todos.filter((item) => item.id !== action.id),
       }
     case types.EDIT_TODO:
       return {
         ...state,
-        todos: state.todos.map(
-          item => item.id === action.id ? {...item, isEditing: true} : item
-        )
+        todos: state.todos.map((item) =>
+          item.id === action.id ? { ...item, isEditing: true } : item
+        ),
       }
     case types.FINISH_EDITING_TODO:
       return {
         ...state,
-        todos: state.todos.map(
-          item => item.id === action.id ? {...item, title: action.updatedTodoText, isEditing: false} : item
-        )
+        todos: state.todos.map((item) =>
+          item.id === action.id
+            ? { ...item, title: action.updatedTodoText, isEditing: false }
+            : item
+        ),
       }
-      default:
-        return state;
+    default:
+      return state
   }
-};
+}
