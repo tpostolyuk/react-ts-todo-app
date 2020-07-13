@@ -3,8 +3,16 @@ import { ActionTypes, InititalState } from './action-types'
 
 export const initialState: InititalState = {
   todos: [
-    { id: '32v425v34gvb572', title: 'Buy a milk', isEditing: false },
-    { id: '32c5345b3464536', title: 'Read a book', isEditing: false },
+    {
+      id: '32v425v34gvb572',
+      title: 'Buy a milk',
+      isEditing: false,
+    },
+    {
+      id: '32c5345b3464536',
+      title: 'Read a book',
+      isEditing: false,
+    },
   ],
 }
 

@@ -15,7 +15,11 @@ export const TodoForm: React.FC = () => {
   const handleClick = (): void => {
     if (value !== '') {
       dispatch(
-        actions.addTodo({ id: uuidv4(), title: value, isEditing: false })
+        actions.addTodo({
+          id: uuidv4(),
+          title: value,
+          isEditing: false,
+        })
       )
       setValue('')
     }

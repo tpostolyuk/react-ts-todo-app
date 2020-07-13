@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux'
 import { todos } from '../common/selectors'
 import { Todo } from '../common/action-types'
 import { TodoItem } from '../todo-item'
+import s from './todo-list.module.css'
 
 export const TodoList: React.FC = () => {
   const items: Todo[] = useSelector(todos)
@@ -14,5 +15,5 @@ export const TodoList: React.FC = () => {
       isEditing={item.isEditing}
     />
   ))
-  return <React.Fragment>{todo}</React.Fragment>
+  return <div className={s.list}>{todo}</div>
 }

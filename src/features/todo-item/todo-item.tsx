@@ -50,7 +50,7 @@ export const TodoItem: React.FC<Todo> = (props: PropsWithChildren<Todo>) => {
         <button className={s['edit-button']} onClick={() => handleEdit()}>
           Edit
         </button>
-        <button className={s['delete-button']} onClick={handleDelete} />
+        <button onClick={handleDelete} className={s['delete-button']} />
       </div>
     </div>
   )
