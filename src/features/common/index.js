@@ -1,4 +1,1 @@
-export {
-  todoReducer
-}
-from './reducer';
+export { todoReducer } from './reducer'

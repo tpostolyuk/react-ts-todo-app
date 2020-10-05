@@ -30,6 +30,11 @@ export const TodoItem: React.FC<Todo> = (props: PropsWithChildren<Todo>) => {
     return (
       <div className={s.item}>
         <input
+          onKeyDown={(e) => {
+            if (e.keyCode === 13) {
+              handleFinishEditing()
+            }
+          }}
           onChange={(e) => setUpdatedTodoValue(e.target.value)}
           className={s.input}
           value={updatedTodoValue}

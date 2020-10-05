@@ -16,6 +16,7 @@ export const initialState: InititalState = {
   ],
 }
 
+// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 export const todoReducer = (
   state: InititalState = initialState,
   action: ActionTypes

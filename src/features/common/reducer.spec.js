@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import * as types from './types'
 import { todoReducer, initialState } from './reducer'
 
